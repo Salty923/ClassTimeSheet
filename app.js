@@ -1,4 +1,4 @@
-alert("connected");
+//alert("connected");
 
 
     // Initialize Firebase
@@ -11,3 +11,13 @@ alert("connected");
     messagingSenderId: "131420537587"
   };
   firebase.initializeApp(config);
+
+  var database = firebase.database();
+
+  var emp =$("");
+  var empPos =$("");
+  
+
+  database.ref("emp").push({
+      employee: employee
+  })
