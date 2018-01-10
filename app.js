@@ -14,10 +14,30 @@
 
   var database = firebase.database();
 
-  var emp =$("");
-  var empPos =$("");
+  var emp =$("emp").val();
+  var empPos = $("empp").val();
+  var start =$("start").val();
+  var worked =$("worked").val();
+  var rate =$("rate").val(); 
+  var total =$("total").val();
+  var btnadd =$("submit");
+
   
 
-  database.ref("emp").push({
-      employee: employee
-  })
+  //sign up with onclick event
+  btnadd.on("click", e => {
+      alert("clicked");
+      //get email and password
+      var emp = $("emp").val();
+      var empPos = $("empp").val();
+     
+
+      database.ref("employee").push({
+          emp: emp,
+          Position: empPos
+      })
+  });
+
+
+
+  
